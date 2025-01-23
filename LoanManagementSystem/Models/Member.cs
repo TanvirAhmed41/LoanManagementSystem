@@ -12,9 +12,13 @@ namespace LoanManagementSystem.Models
         public string Name { get; set; }
 
         [StringLength(50)]
+        [Required]
+        [Phone]
         public string Contact { get; set; }
 
         [StringLength(100)]
+        [Required]
+        [EmailAddress]
         public string Email { get; set; }
 
         [StringLength(250)]

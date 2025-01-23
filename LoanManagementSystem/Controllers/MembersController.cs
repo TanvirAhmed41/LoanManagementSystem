@@ -11,6 +11,7 @@ namespace LoanManagementSystem.Controllers
         private string connectionString = @"Server=(LocalDb)\MSSQLLocalDB;Database=LoanManagementDB;Trusted_Connection=True;";
 
         // GET: Members
+        [Authorize(Roles = "Admin")]//To control who can create, view, or modify data.
         public ActionResult Index()
         {
             var members = GetMembers();
