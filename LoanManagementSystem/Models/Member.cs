@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace LoanManagementSystem.Models
 {
     public class Member
     {
-        internal DateTime CreatedDate;
-
         public int MemberId { get; set; }
 
         [Required]
@@ -24,6 +19,8 @@ namespace LoanManagementSystem.Models
 
         [StringLength(250)]
         public string Address { get; set; }
-        public DateTime CreateDate { get; set; } = DateTime.Now;
+
+        // Public property to store the created date
+        public DateTime CreatedDate { get; set; }
     }
 }

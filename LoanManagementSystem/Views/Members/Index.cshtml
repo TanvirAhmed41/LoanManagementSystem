@@ -17,13 +17,15 @@
     <tbody>
         @foreach (var member in Model)
         {
-            <tr>
-                <td>@member.Name</td>
-                <td>@member.Contact</td>
-                <td>@member.Email</td>
-                <td>@member.Address</td>
-                <td>@member.CreateDate</td>
-            </tr>
+        <tr>
+            <td>@member.Name</td>
+            <td>@member.Contact</td>
+            <td>@member.Email</td>
+            <td>@member.Address</td>
+            <td>@member.CreatedDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
+
+
+        </tr>
         }
     </tbody>
 </table>

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Web.Mvc;
 using LoanManagementSystem.Models;
@@ -29,11 +30,12 @@ namespace LoanManagementSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                InsertMember(member);
+                InsertMember(member); // Calls the updated InsertMember method
                 return RedirectToAction("Index");
             }
             return View(member);
         }
+
 
         // Helper method to get members from the database
         private List<Member> GetMembers()
@@ -66,14 +68,25 @@ namespace LoanManagementSystem.Controllers
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                var command = new SqlCommand("INSERT INTO Member (Name, Contact, Email, Address) VALUES (@Name, @Contact, @Email, @Address)", connection);
+
+                // Use DateTime.Now to set the creation time at the point of insertion
+                DateTime uniqueTimestamp = DateTime.Now;
+
+                var command = new SqlCommand("INSERT INTO Member (Name, Contact, Email, Address, CreatedDate) VALUES (@Name, @Contact, @Email, @Address, @CreatedDate)", connection);
                 command.Parameters.AddWithValue("@Name", member.Name);
                 command.Parameters.AddWithValue("@Contact", member.Contact);
                 command.Parameters.AddWithValue("@Email", member.Email);
                 command.Parameters.AddWithValue("@Address", member.Address);
+                command.Parameters.AddWithValue("@CreatedDate", uniqueTimestamp);
+
                 command.ExecuteNonQuery();
             }
         }
+
+
+
+
+
 
     }
 }

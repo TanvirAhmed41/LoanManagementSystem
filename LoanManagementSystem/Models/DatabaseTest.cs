@@ -17,7 +17,7 @@ namespace LoanManagementSystem.Models
                 using (var connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    Console.WriteLine("Connection successful!");
+                    Console.WriteLine("Database Connected successfully!");
                     return true;
                 }
             }
