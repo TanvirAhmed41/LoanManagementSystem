@@ -1,0 +1,23 @@
+﻿@model LoanManagementSystem.Models.Member
+
+@using (Html.BeginForm("Create", "Members", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div>
+        <label>Name</label>
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Contact</label>
+        @Html.TextBoxFor(m => m.Contact, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Email</label>
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Address</label>
+        @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+}

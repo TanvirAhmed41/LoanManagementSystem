@@ -1,0 +1,31 @@
+﻿
+@model IEnumerable<LoanManagementSystem.Models.Member>
+
+<h1>Members</h1>
+<a href="@Url.Action("Create")">Create New Member</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Created Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var member in Model)
+        {
+            <tr>
+                <td>@member.Name</td>
+                <td>@member.Contact</td>
+                <td>@member.Email</td>
+                <td>@member.Address</td>
+                <td>@member.CreateDate</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
