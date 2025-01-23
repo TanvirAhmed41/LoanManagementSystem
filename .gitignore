@@ -1,0 +1,35 @@
+# Build Folders
+bin/
+obj/
+
+# User-Specific Files
+.vs/
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Package Management
+packages/
+node_modules/
+
+# Database Files
+*.mdf
+*.ldf
+*.db
+
+# Generated Files
+*_i.c
+*_p.c
+*.ilk
+*.meta
+*.pch
+*.obj
+
+# Compiled Resources
+wwwroot/
+
+# Environment Files
+secrets.json
+.env
